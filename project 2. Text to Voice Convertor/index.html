@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="contenier">
+    <div class="content">
+        <div> <h1>Text To Speech <span>Convertor</span></h1></div>
+        <div >
+            <textarea class="input" rows="15" cols="80" placeholder="Enter text here"></textarea>
+        </div>
+        <div class="btn">
+            <div>
+                <select name="language" class="language">
+                  <option value="audi"></option>
+                </select>
+                </div>
+            <div class="play"> <img src="white-play-icon-png-7.png" alt="">Listen</div>
+        </div>
+    </div>
+</div>
+<script>
+
+    let speech= new SpeechSynthesisUtterance;
+
+    let voices=[];
+
+    let voiceSellect= document.querySelector("select");
+
+    window.speechSynthesis.onvoiceschanged=()=>{
+        voices=window.speechSynthesis.getVoices();
+        speech.voice = voices[0];
+        voices.forEach((voice,i) =>(voiceSellect.options[i] = new Option(voice.name, i)));
+
+    }
+    voiceSellect.addEventListener("change",()=>{
+        speech.voice= voices[voiceSellect.value];
+    })
+
+    document.querySelector('.play').addEventListener("click",()=>{
+        speech.text= document.querySelector("textarea").value;
+        window.speechSynthesis.speak(speech);
+    })
+
+
+</script>
+</body>
+</html>
