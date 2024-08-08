@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+.contanier{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: #E3F2FD;
+}
+.game{
+    width: 500px;
+    height: 550px;
+    background-color: #202836;
+    border-radius: 10px;
+}
+.score-bar{
+    height: 50px;
+    display: flex;
+    justify-content: space-between;
+    border-radius: 10px 10px 0 0;
+    background-color: #384756;
+    color: white;
+}
+.score-bar p{
+    padding: 12px 18px;
+}
+.play-board{
+    width: 500px;
+    height: 500px;
+    display: grid;
+    grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+}
+.play-board .food{
+    background-color: red;
+    border-radius: 50%;
+}
+.play-board .snack{
+    background-color: green;
+}
+.contanier .play-again-btn{
+    width: 200px;
+    height: 150px;
+}
+.contanier button{
+    margin-left: 200px;
+    border: 0;
+    outline: 0;
+    padding: 30px 50px;
+    background: linear-gradient(135deg, pink,orange);
+    border-radius: 30px;
+    font-weight: 800;
+}
+.contanier button:hover{
+    padding: 25px 45px;
+}
+
