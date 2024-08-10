@@ -38,7 +38,7 @@ handHour.style.rotate=rotateAngleHour + "deg";
 }
 
 
-
+repete();
 setInterval(repete,1000)
 
 
