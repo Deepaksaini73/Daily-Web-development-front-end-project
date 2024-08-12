@@ -1,0 +1,61 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+.container{
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: linear-gradient(135deg,#1d0000,#20205b);
+}
+.container .calender{
+    color: white;
+    width: 300px;
+    height: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.container .calender .left-part{
+    width:60%;
+    height:100%;
+    background: white;
+    border-top-left-radius: 12px;
+    border-bottom-left-radius: 12px;
+    color: black;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.container .calender .right-part{
+    width:40%;
+    height:100%;
+    border-top-right-radius: 12px;
+    border-bottom-right-radius: 12px;
+    background: #f4351e;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+.container .calender .left-part .date{
+    font-size: 5em;
+}
+.container .calender .left-part .day{
+    font-size: 2em;
+}
+.container .calender .right-part .month{
+    font-size: 1.5em;
+}
+.container .calender .right-part .year{
+    margin-top:10px ;
+    font-size: 1.5em;
+}
