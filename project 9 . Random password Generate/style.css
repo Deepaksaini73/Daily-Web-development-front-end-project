@@ -1,0 +1,89 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.contenier{
+    height: 100vh;
+    background: #00203A;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+}
+.contenier .box{
+  margin-left: -25%;
+  margin-top: -10%;
+}
+.contenier .box div h1{
+    color: white;
+    font-size: 40px;
+    font-weight: 600;
+    text-align: left;
+}
+.contenier .box div h1 span{
+    color: #007C4B;
+    text-decoration: underline;
+    text-underline-offset: 12px;
+}
+.contenier .box .password {
+    margin-top: 30px;
+    position: relative;
+}
+input{
+    border: 0;
+    outline: 0;
+    width: 500px;
+    height: 50px;
+    background: white;
+    border-radius: 5px;
+    font-size: 20px;
+    padding: 10px;
+
+}
+.contenier .box .password .copy-icon{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+}
+.contenier .box .password .copy-icon i{
+    font-size: 30px;
+    color: #007C4B;
+}
+
+.contenier .box .btn{
+    margin-top: 40px;
+    text-align: left;
+}
+.contenier .box .btn button{
+    border: 0;
+    outline: 0;
+    background: #007C4B;
+    padding: 15px 40px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+}
+.contenier .box .btn button:hover{
+    background: transparent;
+    border: 1px solid white;
+    transition: all 1s ease;
+
+}
+#feedback{
+    color: yellow;
+}
+
+@media only screen and (max-width: 600px) {
+    .contenier .box{
+        margin-left: 0;
+        margin-top: 0;
+      }
+      input{
+        width: 350px;
+        text-align: left;
+      }
+  }
