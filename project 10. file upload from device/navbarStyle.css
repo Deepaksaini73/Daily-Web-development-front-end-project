@@ -1,0 +1,250 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", system-ui;
+}
+body{
+    overflow-y: hidden;
+}
+.contenier{
+    height: 100vh;
+    background-image: url(img/background.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-size: 100%;
+    box-shadow: 0 90px 200px #000 inset;
+}
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    padding: 20px 80px;
+
+}
+nav div h3{
+    font-size: 40px;
+    font-weight: 400;
+    font-family: cursive;
+}
+
+.links{
+    display: flex;
+    align-items: center;
+    color: white;
+}
+.links a{
+    text-decoration: none;
+    color: white;
+    margin-left: 25px;
+    font-size: 16px;
+    font-weight: 700;
+    opacity: 1;
+}
+.links a:hover{
+    opacity: 0.7;
+}
+#form-open{
+    width: 140px;
+    height: 50px;
+    color: white;
+    padding: 10px 25px;
+    background:inherit;
+    border: 2px solid white;
+    border-radius: 5px;
+    font-weight: 400;
+}
+#form-open:hover{
+    background: white ;
+    color: white;
+    animation: example 2s ;
+}
+.btn{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#form-open{
+    
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+#form-open:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+#form-open:active {
+    color: #000
+}
+
+#form-open:active:after {
+    background: transparent;
+}
+
+#form-open:hover:before {
+    opacity: 1;
+}
+
+#form-open:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+.home::before{
+    content:'';
+    position: absolute;
+    height: 100%;
+    width: 100%;
+    background-color: rgba(0,0,0,0.6);
+    z-index: 102;
+    opacity:0;
+    pointer-events: none;
+    transition: all 0.5s ease-out;
+
+}
+.home.show::before{
+    opacity: 1;
+    pointer-events: auto;
+}
+
+
+.form-container{
+    position: fixed;
+    max-width: 320px;
+    width: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.2);
+    z-index: 101;
+    background: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: rgba(0,0,0,0.1);
+    opacity: 0;
+    pointer-events: none;
+    transition: all 0.4s ease-out;
+}
+.home.show .form-container{
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate(-50%, -50%) scale(1);
+
+}
+
+.form-container h3{
+    font-size: 22px;
+    color: #0b0217;
+    text-align: center;
+}
+.cancel{
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background: transparent;
+    color: black;
+    border: 0;
+    cursor: pointer;
+}
+.input-box{
+    margin-top: 30px;
+    position:relative;
+    width: 100%;
+    height: 40px;
+}
+.input-box input{
+    height: 100%;
+    width: 100%;
+    border: 0;
+    outline: 0;
+    border-bottom:  1.5px solid #aaaaaa;
+    padding-left: 30px;
+
+}
+.input-box i{
+    position: absolute;
+    top: 20%;
+    transform: translateY((-50%));
+    font-size:20px;
+}
+.input-box i.bi-envelope{
+    left: 0;
+    color: #707070;
+}
+.input-box i.bi-lock-fill{
+    left: 0;
+    color: #707070;
+}
+.input-box i .bi-eye-slash{
+    right: 0;
+    font-size: 18px;
+}
+
+.option-field{
+    margin-top: 40px;
+}
+
+.frg-btn{
+    margin-left: 40px;
+    background: transparent;
+    border: 0;
+    color: purple;
+}
+.login-now , .sign-now{
+    margin-top: 30px;
+    background: rgb(160, 2, 245);
+    border: 0;
+    padding: 10px 100px;
+    border-radius: 20px;
+    color: white;
+}
+.sign-info{
+    margin-top: 20px;
+}
+.sign-info button{
+    background: transparent;
+    border: 0;
+    color: purple;
+}
+.sign-form{
+    display: none;
+}
+.form-container.active .sign-form{
+    display: block;
+}
+.form-container.active .login-form{
+    display: none;
+}
+input[type=email]:focus,input[type=password]:focus{
+    border-bottom: 2px solid purple; 
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}

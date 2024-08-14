@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Filr upload</title>
+    <link rel="stylesheet" href="navbarStyle.css">
+    <link rel="stylesheet" href="cardsStyle.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="contenier">
+        <nav>
+            <div>
+                <h3>Instagram</h3>
+            </div>
+            <div class="links">
+                <a href="">Home</a>
+                <a href="">Search</a>
+                <a href="">Explore</a>
+                <a href="">Reels</a>
+                <a href="">Message</a>
+                <a href="">Notifications</a>
+                <a href="">Create</a>
+            </div>
+            <div class="btn">
+                <div class="profile-icon" ><img style="width:40px;border-radius: 50%;height: 40px; margin:12px;" src="img/no-profile-picture-15257.png" alt=""></div>
+                <button id="form-open">Login</button>
+            </div>
+        </nav>
+
+ <!-- cards  -->
+        <div class="gallary-wrap">
+            <div class="back-btn"><i class="fa-solid fa-chevron-left"></i></div>
+            <div class="gallary">
+              <div class="card">
+                <span class="item">
+                  <img src="" alt=""  id="profile-img"/>
+                  <h2 class="name" contenteditable="true" >Deepak <br>saini</h2>
+                  <p class="profession" contenteditable="true" >Web Developer</p>
+                  <button class="upload-btn">Upload</button>
+                  <input type="file" id="fileInput" style="display: none;" />
+                </span>
+                <span class="item">
+                  <img src="" alt="" />
+                  <h2 class="name" contenteditable="true" >Nilesh Vishwakarma</h2>
+                  <p class="profession" contenteditable="true" >Designer</p>
+                  <button class="upload-btn">Upload</button>
+                  <input type="file" id="fileInput" style="display: none;" />
+
+                </span>
+                <span class="item">
+                  <img src="" alt="" />
+                  <h2 class="name" contenteditable="true" >Deep <br> jyoti</h2>
+                  <p class="profession" contenteditable="true" >Mechanical Engineer</p>
+                  <button class="upload-btn">Upload</button>
+                  <input type="file" id="fileInput" style="display: none;" />
+
+                </span>
+              </div>
+      
+      
+              <div class="card">
+                <span class="item">
+                  <img src="" alt="" />
+                  <h2 class="name" contenteditable="true" >Tushar <br> Gardia</h2>
+                  <p class="profession" contenteditable="true" >Robotics Engineer</p>
+                  <button class="upload-btn" >Upload</button>
+                  <input type="file" id="fileInput" style="display: none;" />
+
+                </span>
+                <span class="item">
+                  <img src="" alt="" />
+                  <h2 class="name" contenteditable="true" >Alok <br> Kumar</h2>
+                  <p class="profession" contenteditable="true" >Actor</p>
+                  <button class="upload-btn">Upload</button>
+                  <input type="file" id="fileInput" style="display: none;" />
+
+                </span>
+                <span class="item">
+                  <img src="" alt="" />
+                  <h2 class="name" contenteditable="true" >Krishnananad Yadav</h2>
+                  <p class="profession" contenteditable="true" >Civil Engineer</p>
+                  <button class="upload-btn" > Upload</button>
+                  <input type="file" id="fileInput" style="display: none;" />
+
+                  
+                </span>
+              </div>
+              
+            </div>
+            <div class="forward-btn"><i class="fa-solid fa-chevron-right"></i></div>
+          </div>
+        <section class="home">
+        <div class="form-container deepak">
+            <button class="cancel" ><i class="bi bi-x"
+                        style="font-size: 20px;"></i></button><div class="form login-form">
+                <form action="#">
+                <h3>Login</h3>
+                
+                <div class="input-box">
+                    <input type="email" placeholder="Enter your email" > 
+                    <i class="bi bi-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="password"  placeholder="Enter your password " >
+                    <i class="bi bi-lock-fill"></i>
+                    <i class="bi bi-eye-slash " ></i></p>
+                </div>
+            </form>
+            <div class="option-field">
+                <input type="checkbox"> Remember me
+                <button class="frg-btn">forgot password?</button>
+
+                <button class="login-now"> Login Now</button>
+            </div>
+            
+            <p class="sign-info">don't have account ? <button id="signup">sign up</button></p>
+        </div>
+
+
+        
+            <div class="form sign-form">
+                <form action="#">
+                <h3>Sign up</h3>
+                <div class="input-box">
+                    <input type="email" placeholder="Enter your email"> 
+                    <i class="bi bi-envelope"></i>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="password"  placeholder="Create password">
+                    <i class="bi bi-lock-fill"></i>
+                    <i class="bi bi-eye-slash "></i></p>
+                </div>
+                <div class="input-box">
+                    <input type="password" class="password"  placeholder="Confirm password" >
+                    <i class="bi bi-lock-fill"></i>
+                    <i class="bi bi-eye-slash"></i></p>
+                </div>
+            </form>
+            <div class="option-field">
+                <button class="sign-now"> Sign Now</button>
+            </div>
+            
+            <p class="sign-info">Already have have account <button id="login">  login </button></p>
+        </div>
+        </div>
+    </div>
+</section>
+
+    </div>
+    
+
+<script src="navbarScript.js"></script>
+<script src="cerdsScript.js"></script>
+
+<script src="upload.js"></script>
+</body>
+</html>
