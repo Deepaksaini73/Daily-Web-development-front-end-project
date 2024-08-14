@@ -13,3 +13,4 @@ projects  name:-
 7. /project 7 . Analog Clock
 8. /project 8 . Mini Calendar
 9. /project 9 . Random password Generate
+10. /project 10 .  file upload from device
