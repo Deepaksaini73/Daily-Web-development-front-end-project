@@ -14,3 +14,4 @@ projects  name:-
 8. /project 8 . Mini Calendar
 9. /project 9 . Random password Generate
 10. /project 10 .  file upload from device
+11. /project 11 . Love Talk app
