@@ -1,0 +1,58 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif ;
+}
+.container{
+    height: 100vh;
+    background: pink;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.box{
+    height: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+.box div{
+    padding: 20px;
+}
+input{
+    border:0;
+    border-radius: 6px;
+    outline: 0;
+    padding: 12px;
+    width: 300px;
+    height: 40px;
+    text-transform: uppercase;
+}
+.container .box button{
+    padding: 12px 30px;
+    margin: 20px;
+    border: 2px solid grey;
+    border-radius: 12px;
+    font-weight: 700;
+    outline: 0;
+}
+.container .box .btn button:hover, .container .box .select .girlType:hover{
+    background: transparent;
+    transition: 0.4s ease;
+}
+.container .box .emoji img{
+    width: 229px;
+    height: 214px;
+}
+.container .box .select .yes:hover{
+    background: rgb(11, 227, 11);
+    color: rgb(255, 255, 255);
+    transition: 0.5s ease;
+}
+.container .box .select .no:hover{
+    transition: 0.5s ease;
+    color: rgb(255, 255, 255);
+    background: rgb(220, 69, 69);
+}

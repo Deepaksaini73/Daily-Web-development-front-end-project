@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", function() {
           // Trigger the corresponding file input click
           let fileInput = button.nextElementSibling;
           fileInput.click();
+          
       });
 
       // Handle file input change
