@@ -1,0 +1,123 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: sans-serif;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: #6663E6;
+}
+
+.container {
+    background-color: #fff;
+    border-radius: 12px;
+    max-width: 400px;
+    width: 100%;
+    padding: 25px;
+}
+
+.container h1 {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.container .box {
+    margin: 20px 0 15px 0;
+}
+
+.box label {
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    padding: 8px 15px;
+    border: 2px solid #e6e6e6;
+    transition: all 0.2s ease;
+}
+
+label.selected {
+    border-color: #6665ee;
+}
+
+label .row {
+    display: flex;
+    justify-content: space-between;
+}
+
+label .row .column {
+    display: flex;
+    align-items: center;
+}
+
+label .row .circle {
+    position: relative;
+    height: 20px;
+    width: 20px;
+    display: block;
+    border: 2px solid #ccc;
+    border-radius: 50%;
+    margin-right: 10px;
+}
+
+label .row .circle::after {
+    content: "";
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    background-color: #ccc;
+    top: 3px;
+    left: 3px;
+    border-radius: inherit;
+    display: none;
+}
+
+label.selected .row .circle::after {
+    display: block;
+    background-color: #6663E6!important;
+}
+
+label:hover .row .circle::after {
+    display: block;
+    background-color: #e6e6e6;
+}
+
+label .row span {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+label .row .percent {
+    display: none;
+}
+
+label .progress {
+    height: 7px;
+    background-color: #f0f0f0;
+    margin: 8px 0 3px 0;
+    width: 100%;
+    border-radius: 30px;
+    position: relative;
+    display: none;
+}
+
+
+label .progress::after {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: calc(1% * var(--w));
+    background-color: #ccc;
+    border-radius: inherit;
+}
+
+label.selected .progress::after {
+    background-color: #6663E6;
+}
+
+label.selectall :is(.percent, .progress) {
+    display: block;
+}
