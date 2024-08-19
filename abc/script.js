@@ -1,34 +1,44 @@
-const formOpenBtn= document.querySelector('#form-open'),
-home=document.querySelector('.home'),
-formContainer = document.querySelector('.form-container'),
-formCloseBtn= document.querySelector('.cancel'),
-signUpBtn= document.querySelector('#signup'),
-loginBtn= document.querySelector('#login'),
-pwShowHide= document.querySelectorAll('.bi-eye-slash');
+// Step 1: Get DOM elements
+let nextDom = document.getElementById('next');
+let prevDom = document.getElementById('prev');
 
-formOpenBtn.addEventListener('click',()=>home.classList.add("show"));
-formCloseBtn.addEventListener('click',()=>home.classList.remove("show"));
+let carouselDom = document.querySelector('.carousel');
+let SliderDom = carouselDom.querySelector('.list');
+let thumbnailBorderDom = document.querySelector('.carousel .thumbnail');
+let thumbnailItemsDom = thumbnailBorderDom.querySelectorAll('.item');
+let timeDom = document.querySelector('.carousel .time');
 
-signUpBtn.addEventListener('click',(e)=>{
-    e.preventDefault();
-    formContainer.classList.add("active");
-})
-loginBtn.addEventListener('click',(e)=>{
-    e.preventDefault();
-    formContainer.classList.remove("active");
-})
+thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
 
-pwShowHide.forEach(icon=>{
-    icon.addEventListener('click',()=>{
-        let getPwInput =icon.parentElement.querySelector("input");
-        if(getPwInput.type === 'password'){
-            getPwInput.type ='text';
-            icon.classList.replace("bi-eye-slash" , "bi-eye-fill")
-        }
-        else{
-            getPwInput.type ='password';
-            icon.classList.replace("bi-eye-fill" , "bi-eye-slash")
-        }
-    })
-})
+let timeRunning = 3000;
 
+nextDom.onclick = function() {
+    showSlider('next');    
+}
+
+prevDom.onclick = function() {
+    showSlider('prev');    
+}
+
+let runTimeOut;
+
+function showSlider(type) {
+    let SliderItemsDom = SliderDom.querySelectorAll('.carousel .list .item');
+    let thumbnailItemsDom = document.querySelectorAll('.carousel .thumbnail .item');
+    
+    if (type === 'next') {
+        SliderDom.appendChild(SliderItemsDom[0]);
+        thumbnailBorderDom.appendChild(thumbnailItemsDom[0]);
+        carouselDom.classList.add('next');
+    } else {
+        SliderDom.prepend(SliderItemsDom[SliderItemsDom.length - 1]);
+        thumbnailBorderDom.prepend(thumbnailItemsDom[thumbnailItemsDom.length - 1]);
+        carouselDom.classList.add('prev');
+    }
+    
+    clearTimeout(runTimeOut);
+    runTimeOut = setTimeout(() => {
+        carouselDom.classList.remove('next');
+        carouselDom.classList.remove('prev');
+    }, timeRunning);
+}
