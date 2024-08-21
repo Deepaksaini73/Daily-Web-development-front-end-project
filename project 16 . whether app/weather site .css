@@ -1,0 +1,58 @@
+*{
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        body{
+            background-color: rgb(44, 39, 39);
+        }
+        .content{
+            width: 300px;
+            height: 450px;
+            background: linear-gradient(135deg,#00feba,#5b548a);
+            background-size: cover;
+            background-position: center;
+            text-align: center;
+            color: white;
+            padding: 40px 35px;
+            margin: 100px auto 0px;
+            border-radius: 12px;
+        }
+        .searchBar p {
+            width: 100%;
+            display: flex;
+            justify-content:space-around;
+            text-align: center;
+        }
+        .searchBar p img{
+            width: 20px;
+            background-color: white;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+        }
+        .searchBar p input{
+            border: 0;
+            outline: 0;
+            flex: 1;
+            font-size: 15px;
+            background-color: white;
+            padding: 10px;
+            border-radius: 20px;
+        }
+        .sunImage{
+            width: 120px;
+            margin-top: 30px;
+        }
+        .detail{
+            display: flex;
+            margin-top: 40px;
+            justify-content: space-around;
+            font-size: 10px;
+        }
+        .content h1{
+            font-size: 50px;
+        }
+        .detail img{
+            width: 50px;
+        }
