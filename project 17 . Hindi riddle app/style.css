@@ -1,0 +1,185 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    height: 100vh;
+    padding: 30px 50px;
+    background-color: #fdf5df;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: url(bg.jfif);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    
+}
+
+.nav-bar {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+
+.timer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+}
+
+.timer i {
+    font-size: 30px;
+}
+
+.timer span {
+    padding: 4px;
+    font-size: 20px;
+    font-weight: 900; 
+    color: red;
+
+}
+
+.life i {
+    font-size: 25px;
+    color: red;
+}
+
+
+
+.paheliya {
+    background-color: #fdf5df;
+    position: relative;
+    padding: 20px;
+    margin: 10px auto;
+    width: 600px;
+    height: 300px;
+    text-align: center;
+    border-radius: 12px;
+    color: black;
+    font-size: 20px;
+    font-weight: 900;
+    margin-bottom: 100px;
+    box-shadow: 10px 10px 15px rgb(22, 21, 21);
+}
+
+.input, .input-control {
+    position: absolute;
+    bottom: 100px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.input-control {
+    bottom: 30px;
+}
+
+.input-control button {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+    padding: 8px 24px;
+    margin: 0 10px;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    
+}
+
+.input-control #delete-btn {
+    background-color: rgb(255, 42, 42);
+    box-shadow: 10px 10px 15px rgb(22, 21, 21);
+
+}
+
+.input-control #next-btn {
+    background-color: rgb(30, 173, 30);
+    box-shadow: 10px 10px 15px rgb(22, 21, 21);
+
+}
+
+.paheliya input, .display-keys input {
+    font-family: inherit;
+    font-weight: 900;
+    font-size: 24px;
+    height: 40px;
+    width: 40px;
+    text-align: center;
+    border: 2px solid #f92c85;
+    border-radius: 6px;
+    margin-left: 4px;
+    outline: none;
+    box-shadow: 10px 10px 15px rgb(22, 21, 21);
+
+}
+
+.display-keys input {
+    cursor: pointer;
+}
+
+.display-keys div {
+    margin-bottom: 20px;
+}
+
+
+
+/* made mobile view  */ 
+
+@media only screen and (max-width: 600px) {
+
+    body {
+         background-repeat: repeat-y;
+    }
+    .nav-bar{
+        justify-content: space-between;
+    }
+    
+    .paheliya{
+        position: relative;
+        padding: 20px;
+        margin: 10px auto;
+        width: 280px;
+        height: 500px;
+        text-align: center;
+        border-radius: 12px;
+        font-size: 18px;
+        font-weight: 700;
+}
+   
+    .paheliya p{
+        align-items: center;
+        position: relative;
+    }
+    .paheliya .input {
+        display: flex;
+        position: absolute;
+        bottom: 40%;
+        transform: translateX(-50%);
+        
+    }
+    .paheliya .input  input{
+        border-color: #f92c85;
+    }
+    .input-control{
+        display: flex;
+    }
+
+    .display-keys div{
+        margin-top: 30px;
+    }
+
+    .display-keys input{
+        flex-wrap: nowrap;
+        font-weight: 600;
+        font-size: 20px;
+        height: 30px;
+        width: 30px;
+        border-radius: 5px;
+    }
+
+}
+    
