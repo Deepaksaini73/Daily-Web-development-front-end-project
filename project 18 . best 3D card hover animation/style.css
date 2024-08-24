@@ -1,0 +1,112 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", system-ui;
+}
+
+body{
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #161621;
+}
+body::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(#f00,#f0f);
+    width: 100%;
+    height: 100%;
+    clip-path: circle(30% at right 70%);
+}
+body::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: linear-gradient(#2196f3,#e91e63);
+    width: 100%;
+    height: 100%;
+    clip-path: circle(20% at 10% 10%);
+}
+
+.contenier{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    flex-wrap: wrap;
+    z-index: 1;
+}
+.contenier .card{
+    position: relative;
+    width: 280px;
+    height: 400px;
+    margin: 30px;
+    box-shadow: 20px 20px 50px rgb(0,0,0,0.6);
+    border-radius: 15px;
+    background: rgb(255,255,255,0.1);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-top: 2px solid rgb(255,255,255,0.5);
+    border-left: 2px solid rgb(255,255, 255,0.5);
+    backdrop-filter: blur(6px);
+}
+.contenier .card .content h4,.contenier .card .content p,.contenier .card .content a{
+    padding: 20px;
+    text-align: center;
+    transition: 0.5s;
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 0.5s;
+}
+.contenier .card:hover .content h4,.contenier .card:hover .content p,.contenier .card:hover .content a{
+    transform: translateY(0);
+    opacity: 1;
+}
+.contenier .card .content h2{
+    opacity: 1;
+    position: absolute;
+    top: -40px;
+    right: 30px;
+    font-size: 8em;
+    color: rgba(255,255,255,0.05);
+    pointer-events: none;
+}
+.contenier .card .content h4{
+    font-size: 1.8em;
+    color: #fff;
+    font-weight: 300;
+}
+.contenier .card .content p{
+    font-size: 1em;
+    color: #fff;
+    font-weight: 300;
+}
+.contenier .card .content a{
+    position: relative;
+    display: inline-block;
+    padding: 12px 24px;
+    text-decoration: none;
+    background: #fff;
+    border-radius: 12px;
+    font-size: 1em;
+    color: #000;
+    margin-top: 25px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    font-weight: 500;
+    height: 50px;
+}
+.contenier .card .content a:hover{
+    background: transparent;
+    transition: 0.5s;
+    border: 1px solid rgba(255,255,255,0.5);
+    color: rgb(255,255, 255,0.5);
+}
+
