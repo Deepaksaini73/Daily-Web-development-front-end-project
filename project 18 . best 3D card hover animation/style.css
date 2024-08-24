@@ -110,3 +110,23 @@ body::after{
     color: rgb(255,255, 255,0.5);
 }
 
+@media only screen and (max-width: 600px) {
+
+    .contenier .card .content h4,.contenier .card .content p,.contenier .card .content a{
+        padding: 20px;
+        text-align: center;
+        transition: 0.5s;
+        transform: inherit;
+        opacity: 1;
+        transition: 0.5s;
+    }
+    .contenier .card:hover .content h4,.contenier .card:hover .content p,.contenier .card:hover .content a{
+        transform: inherit;
+        opacity: 1;
+    }
+
+    .contenier .card .content a{
+        display:inline;
+        padding: 8px 24px;
+    }
+}
