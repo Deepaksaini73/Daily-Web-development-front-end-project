@@ -1,0 +1,217 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-image:url(bg.jpeg);
+    background-repeat: repeat-y;
+    background-size: 100%;
+    min-height: 100vh;
+    height: 100%;
+    padding: 40px;
+    font-family: "Rubik", sans-serif;
+}
+.contenier{
+    padding: 40px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border-radius: 20px;
+    background-color: rgba(255, 255, 255, 0.5); 
+    backdrop-filter: blur(10px);
+    border: 2px solid #1F9F92;
+    box-shadow: 20px 20px 15px rgb(0,0,0,0.4);
+}
+.contenier .header{
+    font-size: 60px;
+    text-align: center;
+    font-family: "Qwitcher Grypen", cursive;
+    font-weight: 700;
+}
+.contenier .about{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    text-align: center;
+    margin-top: 40px;
+}
+.contenier .about .origin{
+    background: #1F9F92;
+    padding: 10px ;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 600;
+    height: 52px;
+}
+.contenier .about .activity{
+    background: #E97E2E;
+    padding: 20px;
+    padding-top: 16px;
+    width: 80%;
+    height: 50px;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 600;
+    margin: 30px;
+}
+.contenier .about .addMore{
+    padding: 4px;
+    padding-top:8px;
+    background: #FDBD4F;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 600;
+    height: 50px;
+    text-align: center;
+    cursor: pointer;
+}
+
+.contenier .tasks .task{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.contenier .tasks .task .subject{
+    background:rgb(255,255,255,0.3);
+    border: 2px solid #1F9F92;
+    padding: 10px;
+    border-radius: 12px;
+    min-width: 90px;
+    font-size: 20px;
+    font-weight: 600;
+    text-align: center;
+}
+
+.contenier .tasks .task .taskValue{
+    background:rgb(255,255,255,0.3);
+    border: 2px solid #E97E2E;
+    border-radius: 12px;
+    font-size: 20px;
+    font-weight: 600;
+    padding: 20px;
+    width: 80%;
+    margin: 20px;
+    margin-left: 70px;
+}
+
+.contenier .tasks .task .check{
+    padding: 10px;
+}
+.contenier .tasks .task .check input{
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+}
+
+.contenier .dateDiv {
+    overflow: hidden;
+    text-align: center;
+    margin-top: 50px;
+}
+.contenier .dateDiv:before,
+.contenier .dateDiv:after {
+    background-color: #000;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+.contenier .dateDiv:before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+.contenier .dateDiv:after {
+    left: 0.5em;
+    margin-right: -50%;
+}
+.contenier .dateDiv input{
+    background:whitesmoke;
+    border-radius: 20px;
+    font-size: 15px;
+    font-weight: 400;
+    padding: 5px;
+    cursor: pointer;
+}
+
+/*  remove calender icon from input type calender  */
+
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+
+
+@media screen and (max-width:600px) {
+    body{
+        padding: 5px;
+    }
+    .contenier{
+        padding: 20px;
+    }
+    .contenier .header{
+        font-size: 30px;
+        font-weight: 600;
+    }
+    .contenier .about{
+        margin-top: 0;
+    }
+    .contenier .about .origin{
+        font-size: 12px;
+        font-weight: 600;
+    }
+    .contenier .about .activity{
+        font-size: 12px;
+        font-weight: 600;
+    }
+    .contenier .about .addMore{
+        font-size: 12px;
+        width: 80px;
+        font-weight: 600;
+    }
+    .contenier .dateDiv{
+        margin-top: 0px;
+    }
+    .contenier .dateDiv input{
+        background:whitesmoke;
+        border-radius: 20px;
+        font-size: 9px;
+        font-weight: 400;
+        padding: 2px;
+        cursor: pointer;
+    }
+    .contenier .tasks .task{
+        margin-top: 20px;
+    }
+    .contenier .tasks .task .subject{
+        padding: 10px;
+        min-width: 40px;
+        font-size: 12px;
+        font-weight: 500;
+    }
+    
+    .contenier .tasks .task .taskValue{
+        font-size: 12px;
+        font-weight: 500;
+        padding: 10px;
+        width: 80%;
+        margin: 5px;
+        margin-left: 10px;
+    }
+    
+    .contenier .tasks .task .check{
+        padding: 0px;
+        margin-left: 4px;
+    }
+    .contenier .tasks .task .check input{
+        width: 15px;
+        height: 15px;
+    }
+}

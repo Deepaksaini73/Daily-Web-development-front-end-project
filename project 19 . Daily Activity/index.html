@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Daily Activity</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Qwitcher+Grypen:wght@400;700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap" rel="stylesheet">
+
+</head>
+<body>
+    <div class="contenier">
+        <div class="header"><h1>Daily Activity</h1></div>
+        <div class="about">
+            <div class="origin"><h4>Origin or Subject</h4></div>
+            <div class="activity"><p>Activity</p></div>
+            <div class="addMore">Add more </div>
+        </div>
+
+        <div class="dateDiv">
+            <input type="date" id="date" readonly>
+            <!-- Date div will be created here -->
+        </div>
+
+        <div class="tasks">
+            <!-- Tasks will be added here -->
+             <div class="task">
+                <div class="subject" contenteditable="true"></div>
+                <p class="taskValue" contenteditable="true"></p>
+                <div class="check"><input type="checkbox"></div>
+             </div>
+        </div> 
+
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
