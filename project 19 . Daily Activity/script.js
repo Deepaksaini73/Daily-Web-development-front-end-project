@@ -76,27 +76,67 @@ function addTask() {
 
     tasks.appendChild(taskDiv);
 
+    subjectDiv.addEventListener('input', saveTasks);
+    taskValueP.addEventListener('input', saveTasks);
+    input.addEventListener('change', saveTasks);
+
+
     saveTasks(); 
 }
 
 // Save tasks to localStorage
 function saveTasks() {
-    const taskContainers = document.querySelectorAll('.tasks');
-    taskContainers.forEach((taskContainer, index) => {
-        localStorage.setItem(`tasks-${index}`, taskContainer.innerHTML);
+    const tasksArray = [];
+    document.querySelectorAll('.task').forEach(taskDiv => {
+        const subject = taskDiv.querySelector('.subject').innerText;
+        const taskValue = taskDiv.querySelector('.taskValue').innerText;
+        const isChecked = taskDiv.querySelector('input[type="checkbox"]').checked;
+
+        tasksArray.push({ subject, taskValue, isChecked });
     });
+    localStorage.setItem('tasks', JSON.stringify(tasksArray));
 }
 
 // Load tasks from localStorage
 function loadTasks() {
-    const taskContainers = document.querySelectorAll('.tasks');
-    taskContainers.forEach((taskContainer, index) => {
-        const savedTasks = localStorage.getItem(`tasks-${index}`);
-        if (savedTasks) {
-            taskContainer.innerHTML = savedTasks;
-        }
-    });
+    const savedTasks = localStorage.getItem('tasks');
+    if (savedTasks) {
+        const tasksArray = JSON.parse(savedTasks);
+        tasksArray.forEach(taskData => {
+            let taskDiv = document.createElement('div');
+            taskDiv.classList.add("task");
+
+            let subjectDiv = document.createElement('div');
+            subjectDiv.classList.add("subject");
+            subjectDiv.contentEditable = true;
+            subjectDiv.innerText = taskData.subject;
+
+            let taskValueP = document.createElement('p');
+            taskValueP.classList.add("taskValue");
+            taskValueP.contentEditable = true;
+            taskValueP.innerText = taskData.taskValue;
+
+            let checkDiv = document.createElement('div');
+            let input = document.createElement('input');
+            input.type = 'checkbox';
+            input.checked = taskData.isChecked;
+            checkDiv.appendChild(input);
+            checkDiv.classList.add("check");
+
+            taskDiv.append(subjectDiv);
+            taskDiv.append(taskValueP);
+            taskDiv.append(checkDiv);
+
+            tasks.appendChild(taskDiv);
+
+            // Save task on any input or checkbox change
+            subjectDiv.addEventListener('input', saveTasks);
+            taskValueP.addEventListener('input', saveTasks);
+            input.addEventListener('change', saveTasks);
+        });
+    }
 }
+
 
 // Initial setup when the page loads
 window.onload = function() {
@@ -105,8 +145,11 @@ window.onload = function() {
     loadTasks(); 
 };
 
+
+
 // Check for date change every minute
 setInterval(checkDateChange, 60000); 
 
 // Add a new task when "Add more" is clicked
 addMore.addEventListener('click', addTask);
+
