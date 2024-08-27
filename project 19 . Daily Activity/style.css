@@ -155,7 +155,11 @@ input[type="date"]::-webkit-calendar-picker-indicator {
     }
     .contenier{
         padding: 20px;
+<<<<<<< HEAD
         min-height: 700px;
+=======
+        min-height:800px;
+>>>>>>> 4b62f1ea22c2a07ecb81fb0de7fb5b85d461e191
     }
     .contenier .header{
         font-size: 30px;
