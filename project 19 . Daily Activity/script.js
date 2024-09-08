@@ -1,4 +1,3 @@
-
 let addMore = document.querySelector('.addMore');
 let tasks = document.querySelector('.tasks');
 let date = document.getElementById('date');
@@ -6,7 +5,7 @@ let date = document.getElementById('date');
 // Set the current date
 function setCurrentDate() {
     let today = new Date().toISOString().split('T')[0];
-    date.value=today;
+    date.value = today;
     localStorage.setItem('currentDate', today); // Store the date in localStorage
 }
 
@@ -46,9 +45,16 @@ function checkDateChange() {
     let today = new Date().toISOString().split('T')[0];
 
     if (storedDate !== today) {
-        setCurrentDate(); 
-        createNewDateDiv(); 
+        clearTasks(); // Clear tasks when the day changes
+        setCurrentDate();
+        createNewDateDiv();
     }
+}
+
+// Clear all tasks from the page and localStorage
+function clearTasks() {
+    tasks.innerHTML = ''; // Remove all task elements
+    localStorage.removeItem('tasks'); // Clear tasks from localStorage
 }
 
 // Add a new task
@@ -80,8 +86,7 @@ function addTask() {
     taskValueP.addEventListener('input', saveTasks);
     input.addEventListener('change', saveTasks);
 
-
-    saveTasks(); 
+    saveTasks();
 }
 
 // Save tasks to localStorage
@@ -129,7 +134,6 @@ function loadTasks() {
 
             tasks.appendChild(taskDiv);
 
-            // Save task on any input or checkbox change
             subjectDiv.addEventListener('input', saveTasks);
             taskValueP.addEventListener('input', saveTasks);
             input.addEventListener('change', saveTasks);
@@ -137,19 +141,15 @@ function loadTasks() {
     }
 }
 
-
 // Initial setup when the page loads
-window.onload = function() {
-    setCurrentDate(); 
-    checkDateChange(); 
-    loadTasks(); 
+window.onload = function () {
+    setCurrentDate();
+    checkDateChange();
+    loadTasks();
 };
 
-
-
 // Check for date change every minute
-setInterval(checkDateChange, 60000); 
+setInterval(checkDateChange, 60000);
 
 // Add a new task when "Add more" is clicked
 addMore.addEventListener('click', addTask);
-
