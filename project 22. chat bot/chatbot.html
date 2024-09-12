@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chatbot UI</title>
+    <link rel="stylesheet" href="chatbot-style.css">
+</head>
+<body>
+    <div class="chatbot-container">
+        <div class="chat-header">
+            <div class="avatar">
+                <img src="images/chatbot.png" alt="Avatar">
+            </div>
+            <div class="chat-info">
+                <h2>Chat With Information Hub</h2>
+                <p>We're online</p>
+            </div>
+            <div class="settings-button">⚙️</div>
+        </div>
+        <div class="chat-messages" id="chat-box">
+            <div class="bot">Ask anyhing here </div>
+            <!-- Messages will be appended here -->
+        </div>
+        <div class="message-input">
+            <input type="text" id="user-input" placeholder="Enter your message...">
+            <button id="send-btn">Send</button>
+        </div>
+
+        <script src="chatbot.js"></script>
+    </div>
